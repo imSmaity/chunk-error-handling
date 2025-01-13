@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkintangles_test_error_app=self.webpackChunkintangles_test_error_app||[]).push([[755],{755:(e,t,r)=>{r.r(t),r.d(t,{default:()=>n});r(43);var s=r(579);const n=e=>{let{title:t,date:r}=e;return(0,s.jsxs)("div",{children:[(0,s.jsx)("div",{children:t}),(0,s.jsx)("div",{children:r})]})}}}]);
+//# sourceMappingURL=755.3a033ec0.chunk.js.map
