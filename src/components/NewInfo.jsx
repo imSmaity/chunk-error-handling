@@ -3,8 +3,12 @@ import React from 'react'
 const NewInfo = ({ title, date }) => {
   return (
     <div>
-      <b>{title}</b>
-      <div>{date}</div>
+      <div>
+        Title: <b>{title}</b>
+      </div>
+      <div>
+        Created date: <b>{date}</b>
+      </div>
     </div>
   )
 }

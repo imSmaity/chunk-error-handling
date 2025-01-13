@@ -22,6 +22,7 @@ const InfoNotFound = ({ error, resetErrorBoundary }) => {
         <Modal
           open={open}
           onClose={() => setOpen(false)}
+          title="Error found"
           handleTryButton={handleIgnoreErrors}
         >
           The new version has been updated
@@ -95,7 +96,7 @@ const Main = () => {
         onReset={() => setIsIgnoreErrors(true)}
       >
         {open ? (
-          <Modal open={open} onClose={handleCloseModal}>
+          <Modal open={open} onClose={handleCloseModal} title="Task details">
             {isIgnoreErrors ? (
               <NewInfo
                 title={viewDetails?.name}

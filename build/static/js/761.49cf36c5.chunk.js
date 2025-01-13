@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkintangles_test_error_app=self.webpackChunkintangles_test_error_app||[]).push([[761],{761:(e,s,t)=>{t.r(s),t.d(s,{default:()=>d});t(43);var r=t(579);const d=e=>{let{title:s,date:t}=e;return(0,r.jsxs)("div",{children:[(0,r.jsxs)("div",{children:["Title: ",(0,r.jsx)("b",{children:s})]}),(0,r.jsxs)("div",{children:["Created date: ",(0,r.jsx)("b",{children:t})]})]})}}}]);
+//# sourceMappingURL=761.49cf36c5.chunk.js.map
