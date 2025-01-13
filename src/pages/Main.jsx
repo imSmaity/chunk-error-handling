@@ -108,7 +108,7 @@ const Main = () => {
         <Suspense fallback={<div>Loading...</div>}>
           {open ? (
             <Modal open={open} onClose={handleCloseModal} title="Task details">
-              {!isIgnoreErrors ? (
+              {isIgnoreErrors ? (
                 <NewInfo
                   title={viewDetails?.name}
                   date={viewDetails?.createdAt}
