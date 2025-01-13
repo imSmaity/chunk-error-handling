@@ -69,46 +69,58 @@ const Main = () => {
   }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div className="input-box">
-        <Input
-          value={value}
-          placeholder="Enter task name"
-          handleChange={handleChange}
-        />
-        <Button handleClick={handleAddItem}>Add</Button>
-      </div>
-      <div className="items">
-        {items.map((item, index) => (
-          <div key={item.id} className="list-item">
-            <div>{`${index + 1}. ${item.name}`}</div>
-            <Button handleClick={() => handleOpenModal(item)}>
-              View more details
-            </Button>
-            <Button handleClick={() => handleDeleteItem(item.id)}>
-              Delete
-            </Button>
-          </div>
-        ))}
+    <>
+      <div className="container">
+        <div className="input-box">
+          <Input
+            value={value}
+            placeholder="Enter task name"
+            handleChange={handleChange}
+          />
+          <Button handleClick={handleAddItem}>Add</Button>
+        </div>
+        <table className="items">
+          <tbody>
+            {items.map((item, index) => (
+              <tr key={item.id} className="list-item">
+                <td>{`${index + 1}. ${item.name}`}</td>
+
+                <td>
+                  <Button handleClick={() => handleOpenModal(item)}>
+                    View more details
+                  </Button>
+                </td>
+
+                <td>
+                  <Button handleClick={() => handleDeleteItem(item.id)}>
+                    Delete
+                  </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
       <ErrorBoundary
         FallbackComponent={InfoNotFound}
         onReset={() => setIsIgnoreErrors(true)}
       >
-        {open ? (
-          <Modal open={open} onClose={handleCloseModal} title="Task details">
-            {isIgnoreErrors ? (
-              <NewInfo
-                title={viewDetails?.name}
-                date={viewDetails?.createdAt}
-              />
-            ) : (
-              <Info title={viewDetails?.name} date={viewDetails?.createdAt} />
-            )}
-          </Modal>
-        ) : null}
+        <Suspense fallback={<div>Loading...</div>}>
+          {open ? (
+            <Modal open={open} onClose={handleCloseModal} title="Task details">
+              {!isIgnoreErrors ? (
+                <NewInfo
+                  title={viewDetails?.name}
+                  date={viewDetails?.createdAt}
+                />
+              ) : (
+                <Info title={viewDetails?.name} date={viewDetails?.createdAt} />
+              )}
+            </Modal>
+          ) : null}
+        </Suspense>
       </ErrorBoundary>
-    </Suspense>
+    </>
   )
 }
 

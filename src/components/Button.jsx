@@ -1,7 +1,11 @@
-import React from 'react'
+import './styles/button.style.css'
 
 const Button = ({ children, handleClick }) => {
-  return <button onClick={handleClick}>{children}</button>
+  return (
+    <button onClick={handleClick} className="btn">
+      {children}
+    </button>
+  )
 }
 
 export default Button
