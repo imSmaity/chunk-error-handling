@@ -70,7 +70,11 @@ const Main = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className="input-box">
-        <Input placeholder="Enter task name" handleChange={handleChange} />
+        <Input
+          value={value}
+          placeholder="Enter task name"
+          handleChange={handleChange}
+        />
         <Button handleClick={handleAddItem}>Add</Button>
       </div>
       <div className="items">
